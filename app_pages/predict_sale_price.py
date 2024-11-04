@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from src.machine_learning.predict_house_price import load_house_price_predictor_model
 
 def predict_sale_price_body():
 
@@ -21,4 +22,8 @@ def predict_sale_price_body():
 
 
     # Input widget for live predictions.
+    
+
+
+
 
