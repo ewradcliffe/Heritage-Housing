@@ -237,7 +237,7 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 * Pearson correlation vs. Spearman correlation methods from [https://uk.surveymonkey.com/](https://uk.surveymonkey.com/market-research/resources/pearson-correlation-vs-spearman-correlation/)
 
 ### Media
-
+* Icon from https://smiley.cool/twitter-emoji.php
 
 ## Acknowledgements (optional)
 
