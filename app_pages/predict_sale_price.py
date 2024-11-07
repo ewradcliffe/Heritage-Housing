@@ -10,19 +10,20 @@ def predict_sale_price_body():
         f"This page displays the predicted sale prices of the clients houses, and inputs for live house price prediction."
     )
 
-    st.write("---")
-    
     # Model Performance criteria
     st.write(
         f"Please note that out model meets the agreed performance criteria of R2 of at least 0.75.\n"
-        f"Train set:   "
-        f"Validation set:   "
-        f"Test Set set:   "
+        f"Train set:   \n"
+        f"Validation set:   \n"
+        f"Test Set set:   \n"
     )
 
     st.write("---")
 
     # Display attributes and predicted price of clients houses.
+    inherited_houses_prediction_df = (pd.read_csv(f'outputs/datasets/predicted_prices_2/house_price_predictions_2.csv'))
+    inherited_houses_prediction_df.rename(columns={'0': 'Price (USD)'}, inplace=True)
+    st.write(inherited_houses_prediction_df)
 
     st.write("---")
     
