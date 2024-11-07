@@ -4,10 +4,6 @@ from src.machine_learning.predict_house_price import load_house_price_predictor_
 from src.machine_learning.data_management import load_house_price_data
 
 def predict_sale_price_body():
-    # Load house price data
-    #load_house_price_data = (pd.read_csv(f"outputs/datasets/most_important_features_data/X_train.csv").columns.to_list())
-    #pipeline = load_pkl_file(f"outputs/pipeline_2/pipeline_2.pkl")
-
     st.write("### Predict Sale Price.")
 
     st.write(
@@ -29,35 +25,32 @@ def predict_sale_price_body():
     # Display attributes and predicted price of clients houses.
 
     st.write("---")
+    
     # Input widget for live predictions.
-
-    ## Display input widget
+    # Display input widget
     X_live = predict_price_input_widget()
     pipeline_features = pd.read_csv(f'outputs/datasets/most_important_features_data/X_train.csv').columns.to_list()
 
     # Predict on live data
-    if st.button("Get my house price."):
+    if st.button("Get my house price"):
         # Place the inputs in the same order as the data set used to train the model.
         X_live = X_live.filter(pipeline_features)
-
         prediction = load_house_price_predictor_model(X_live)
         st.write(f"We predict the house is worth **${prediction}**")
 
 
 def predict_price_input_widget():
     """Function to display input widget"""
-    # We need to load the dataset to get the min/max values for numerical inputs, and choices for catagorical data.
+    # Load the dataset to get choices for KitchenQual and start value for OverallQual.
     df = load_house_price_data()
-    percentageMin, percentageMax = 0.4, 2.0
-
-    # we create input widgets for the 5 features not dropped.
-    col1, col2, col3, col4, col5 = st.beta_columns(5)
 
     # Empty dataframe for the live data.
     X_live = pd.DataFrame([], index=[0])
 
-    # Draw the widget based on the variable type (numerical or categorical)
-    # and set initial values
+    # Render input widget to screen.
+    col1, col2 = st.beta_columns(2)
+    col3, col4 = st.beta_columns(2)
+
     with col1:
         feature = 'KitchenQual'
         st_widget = st.selectbox(
@@ -67,44 +60,57 @@ def predict_price_input_widget():
     X_live[feature] = st_widget
 
     with col2:
-        feature = 'GarageArea'
-        st_widget = st.number_input(
-            label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
-        )
-    X_live[feature] = st_widget
-    
-    with col3:
-        feature = 'GrLivArea'
-        st_widget = st.number_input(
-            label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
-        )
-    X_live[feature] = st_widget
-    
-    with col4:
         feature = 'OverallQual'
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
+            min_value=1.0,
+            max_value=10.0,
+            value=df[feature].median(),
+            step=1.0
         )
     X_live[feature] = st_widget
 
-    with col5:
-        feature = 'TotalBsmtSF'
-        st_widget = st.number_input(
-            label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
-        )
+    with col3:
+        st.write(f'Please grade the overall quality of the kitchen')
+        st.write(f'Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair')
+
+    with col4:
+        st.write(f'Please grade the overall quality of the house on a scale of 1 - 10')    
+
+    feature = 'GarageArea'
+    st_widget = st.slider(
+        label=feature,
+        min_value=0.0,
+        max_value=3000.0,
+        value=0.0,
+        step=0.01
+    )
     X_live[feature] = st_widget
 
-    st.write(X_live)
+    st.write(f'Size of garage in square feet')
+    
+    feature = 'GrLivArea'
+    st_widget = st.slider(
+        label=feature,
+        min_value=0.0,
+        max_value=10000.0,
+        value=1000.0,
+        step=0.01
+    )
+    X_live[feature] = st_widget
+
+    st.write(f'Above grade (ground) living area square feet')
+
+    feature = 'TotalBsmtSF'
+    st_widget = st.slider(
+        label=feature,
+        min_value=0.0,
+        max_value=10000.0,
+        value=1000.0,
+        step=0.01
+    )
+    X_live[feature] = st_widget
+
+    st.write(f'Total square feet of basement area')
+
     return X_live
