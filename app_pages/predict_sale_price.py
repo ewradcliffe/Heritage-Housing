@@ -7,20 +7,22 @@ def predict_sale_price_body():
     st.write("### Predict Sale Price.")
 
     st.write(
-        f"This page displays the predicted sale prices of the clients houses, and inputs for live house price prediction."
+        f"The client is interested in predicting the house sale prices from her 4 inherited houses,"
+        f"and any other house in Ames, Iowa."
     )
-
-    # Model Performance criteria
     st.write(
-        f"Please note that out model meets the agreed performance criteria of R2 of at least 0.75.\n"
-        f"Train set:   \n"
-        f"Validation set:   \n"
-        f"Test Set set:   \n"
+        f"This page displays the sale prices of the clients houses predicted with our model, and inputs"
+        f"for live house price prediction using the same model."
     )
 
     st.write("---")
 
     # Display attributes and predicted price of clients houses.
+    st.write(f"The client provided us with a data set for the houses she inherited."
+            f"We used our model to predict the price using the most important features"
+            f"as detailed on the Project Findings page")
+    st.write(f"The results are displayed below.")
+
     inherited_houses_prediction_df = (pd.read_csv(f'outputs/datasets/predicted_prices_2/house_price_predictions_2.csv'))
     inherited_houses_prediction_df.rename(columns={'0': 'Price (USD)'}, inplace=True)
     st.write(inherited_houses_prediction_df)
@@ -28,6 +30,9 @@ def predict_sale_price_body():
     st.write("---")
     
     # Input widget for live predictions.
+    st.write(f"To predict the price of any other house using the same model,"
+            f"please enter the details below.")
+
     # Display input widget
     X_live = predict_price_input_widget()
     pipeline_features = pd.read_csv(f'outputs/datasets/most_important_features_data/X_train.csv').columns.to_list()
