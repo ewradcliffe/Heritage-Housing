@@ -12,7 +12,7 @@ from app_pages.project_technical_information import project_technical_informatio
 app = MultiPage(app_name= "House Price Predictions") # Create an instance of the app 
 
 # Add your app pages here using .add_page()
-app.add_page("Quick Project Summary", page_summary_body)
+app.add_page("Project Summary", page_summary_body)
 app.add_page("Findings", project_findings_body)
 app.add_page("Predict Sale Price", predict_sale_price_body)
 app.add_page("Project Hypothosis", project_hypothosis_body)
