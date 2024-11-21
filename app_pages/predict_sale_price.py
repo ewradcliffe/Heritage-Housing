@@ -28,7 +28,7 @@ def predict_sale_price_body():
 
     inherited_houses_prediction_df = (
         pd.read_csv(
-            f"outputs/datasets/predicted_prices_2/house_price_predictions_2.csv"
+            "outputs/datasets/predicted_prices_2/house_price_predictions_2.csv"
                     ))
     inherited_houses_prediction_df.rename(
         columns={'0': 'Price (USD)'}, inplace=True)
