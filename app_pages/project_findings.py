@@ -34,7 +34,8 @@ def project_findings_body():
                    f"of all features "):
         combined_correlation_df = (
             pd.read_csv(
-                f"outputs/datasets/correlation_study/combined_correlation_df.csv"
+                f"outputs/datasets/correlation_study/"
+                f"combined_correlation_df.csv"
                         ))
         combined_correlation_df.drop(columns=['Study'], axis=1, inplace=True)
         st.write(combined_correlation_df)
