@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def project_hypothosis_body():
+def project_hypothesis_body():
     # Function to render page.
     # Conclusions based off studies in PriceCorrelationStudy
 
