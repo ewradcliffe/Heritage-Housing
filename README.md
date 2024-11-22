@@ -185,9 +185,14 @@ These hypotheses are derived from a cursory examination of the data and conventi
 
 9. Open a new terminal and `pip3 install -r requirements.txt`
 
-10. Open the jupyter_notebooks directory and click on the notebook you want to open.
+10. You may see the error below:
+![](docs/plots/dependency_issue.png)
 
-11. Click the kernel button and choose Python Environments.
+11. If so enter `pip install "anyio<4.0" "async-lru<2.0" "rich<10.0"` followed by `pip install twine==3.7.1` to resolve the conflict.
+
+12. Open the jupyter_notebooks directory and click on the notebook you want to open.
+
+13. Click the kernel button and choose Python Environments.
 
 Note that the kernel says Python 3.8.18 as it inherits from the workspace so it will be Python-3.8.18 as installed by our template. To confirm this you can use `! python --version` in a notebook code cell.
 
