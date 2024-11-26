@@ -51,7 +51,10 @@ def predict_sale_price_body():
         # set used to train the model.
         X_live = X_live.filter(pipeline_features)
         prediction = load_house_price_predictor_model(X_live)
-        st.write(f"We predict the house is worth **${prediction}**")
+
+        # Extract prediction from 2d list and render to screen.
+        prediction = prediction[0]
+        st.write(f"We predict the house is worth **${prediction[0]}**")
 
 
 def predict_price_input_widget():
@@ -65,35 +68,35 @@ def predict_price_input_widget():
 
     # Render input widget to screen.
     col1, col2 = st.beta_columns(2)
-    col3, col4 = st.beta_columns(2)
 
     with col1:
+        st.subheader(
+            f'Overall quality of the kitchen: '
+        )
+        st.write(
+            f'Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair'
+            )
         feature = 'KitchenQual'
-        st_widget = st.selectbox(
+        st_widget = st.radio(
             label=feature,
             options=df[feature].unique()
         )
     X_live[feature] = st_widget
 
     with col2:
+        st.subheader(
+            f'Rate the overall material and finish of the house (1-10).'
+        )
         feature = 'OverallQual'
-        st_widget = st.number_input(
+        overall_quality = df[feature].unique()
+        overall_quality.sort()
+        st_widget = st.radio(
             label=feature,
-            min_value=1.0,
-            max_value=10.0,
-            value=df[feature].median(),
-            step=1.0
+            options=overall_quality
         )
     X_live[feature] = st_widget
 
-    with col3:
-        st.write(f'Please grade the overall quality of the kitchen')
-        st.write(f'Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair')
-
-    with col4:
-        st.write(f'Please grade the overall quality of the house on a scale ')
-        st.write(f'of 1 - 10')
-
+    st.subheader(f'Size of garage in square feet')
     feature = 'GarageArea'
     st_widget = st.slider(
         label=feature,
@@ -104,8 +107,7 @@ def predict_price_input_widget():
     )
     X_live[feature] = st_widget
 
-    st.write(f'Size of garage in square feet')
-
+    st.subheader(f'Above grade (ground) living area square feet')
     feature = 'GrLivArea'
     st_widget = st.slider(
         label=feature,
@@ -116,8 +118,7 @@ def predict_price_input_widget():
     )
     X_live[feature] = st_widget
 
-    st.write(f'Above grade (ground) living area square feet')
-
+    st.subheader(f'Total square feet of basement area')
     feature = 'TotalBsmtSF'
     st_widget = st.slider(
         label=feature,
@@ -127,7 +128,5 @@ def predict_price_input_widget():
         step=0.01
     )
     X_live[feature] = st_widget
-
-    st.write(f'Total square feet of basement area')
 
     return X_live
