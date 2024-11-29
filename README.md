@@ -221,7 +221,26 @@ Note that the kernel says Python 3.8.18 as it inherits from the workspace so it 
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+The below libraries were used in the project. The versions used are in brackets after the name.
+
+* numpy (1.19.2). A library for managing numbers and arrays in Python. Most of the packages below need numpy as a prerequasit.
+
+* pandas (1.1.2). To Convert CSV files and numpy arrays into data frames. 
+
+* matplotlib (3.3.1). To provide data visualisations, including a visualisation of the features which strongly correlate with SalePrice in the streamlit dashboard. Matplotlib offers more customisation than seaborn.
+
+* seaborn (0.11.0). To provide data visualisations, including visualisations showing hypotheses in the streamlit dashboard. Seaborn offers analysts powerful and effective visualisations where no customisation is needed
+
+* streamlit (0.85.0). Was used to create the dashboard.
+
+* feature-engine (1.0.2). OrdinalEncoder, vt.PowerTransformer and Winsorizer were used in the pipeline to encode data prior to training the machine learning model.
+
+* scikit-learn (0.24.2 ). Pipeline and StandardScaler were used in the pipeline to encode data prior to training the machine learning model. The scikit-learn Ordinal Encoder was used to encode categorical data prior to the correlation study.
+
+* tensorflow-cpu (2.6.0) and keras (2.6.0) were used to create a neural network model.
+
+* plotly (4.12.0), protobuf (3.20) & altair (<5>). Are installed as part of the Code Institute template but not used.
+
 
 ## Credits
 
