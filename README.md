@@ -159,6 +159,57 @@ These hypotheses are derived from a cursory examination of the data and conventi
 1 - Display model Performance
 2 - Display ML pipeline.
 
+## Testing
+The following tests were conducted on the streamlit dashboard
+| Page | Test | Pass |
+| ----: |  ----: | ----: |
+| Project Summary | Page renders | ✓ |
+| Project Summary | Link to kaggle dataset works | ✓ |
+| Project Summary | Link to READMe works | ✓ |
+| Project Summary | Project Terms & Jargon displayed | ✓ |
+| Project Findings | Page renders | ✓ |
+| Project Findings | Most important features dataframe renders | ✓ |
+| Project Findings | Combined Pearson and Spearman correlations dataframe renders when box ticked | ✓ |
+| Project Findings | Strongly correlated features chart renders | ✓ |
+| Predict Sale Price | Page renders | ✓ |
+| Predict Sale Price | Inherited house prices predictions dataframe renders | ✓ |
+| Predict Sale Price | House price prediction renders when get my house price button clicked | ✓ |
+| Predict Sale Price | Users can select all four possible KitchenQual radio buttons | ✓ |
+| Predict Sale Price | Users can select all 1 -10 possible OverallQual radio buttons | ✓ |
+| Predict Sale Price | Users can select 0 - 3000 on GarageArea slider | ✓ |
+| Predict Sale Price | Users can select 0 - 3000 on GarageArea slider | ✓ |
+| Predict Sale Price | Users can select 0 - 10,000 on GrLivArea slider | ✓ |
+| Predict Sale Price | Users can select 0 - 10,000 on TotalBsmtSF slider | ✓ |
+| Project Hypothesis | Page renders | ✓ |
+| Project Hypothesis | Hypothesis 1 results shown | ✓ |
+| Project Hypothesis | Hypothesis 2 results shown | ✓ |
+| Project Hypothesis | Hypothesis 3 results shown | ✓ |
+| Project Hypothesis | Graphs renders when boxes ticked | ✓ |
+| Technical Information | Page renders | ✓ |
+| Technical Information | Up to date R2 scores for train, validate and test set displayed | ✓ |
+| Technical Information | Pipeline steps displayed | ✓ |
+| Technical Information | Model Information displayed | ✓ |
+
+
+Note that in particular I tested that the model predictions were in line with the hypothesis. Each feature was tested by increasing and decreasing the rating while other features were kept the same. 
+
+
+| Feature | Test | Pass |
+| ----: |  ----: | ----: |
+| KitchenQual | Price prediction increases when rating increases | ✓ |
+| KitchenQual | Price prediction decreases when rating decreases | ✓ |
+| OverallQual | Price prediction increases when rating increases | No |
+| OverallQual | Price prediction decreases when rating decreases | ✓ |
+| GarageArea | Price prediction increases when GarageArea size increases | ✓ |
+| GarageArea | Price prediction decreases when GarageArea size decreases | ✓ |
+| GrLivArea | Price prediction increases when GrLivArea size increases | ✓ |
+| GrLivArea | Price prediction decreases when GrLivArea size decreases | ✓ |
+| TotalBsmtSF | Price prediction increases when TotalBsmtSF size increases | ✓ |
+| TotalBsmtSF | Price prediction decreases when TotalBsmtSF size decreases | ✓ |
+
+* Note that when OverallQual is increased from a rating of 1-2 the price remains static, rather than increasing. This is still in line with the hypothesis. On all other occassions an increase in rating leads to an increase in price. 
+
+## Validation
 
 ## Unfixed Bugs
 There is a dependency issue in the packages in the Code Institute template. The below error message appears when they are installed.  
