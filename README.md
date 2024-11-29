@@ -210,6 +210,7 @@ Note that in particular I tested that the model predictions were in line with th
 * Note that when OverallQual is increased from a rating of 1-2 the price remains static, rather than increasing. This is still in line with the hypothesis. On all other occassions an increase in rating leads to an increase in price. 
 
 ## Validation
+app.py and all files in the app_pages folder are PEP8 compliant. The pass through the Code Institute [PEP8 linter](https://pep8ci.herokuapp.com/) with no errors.
 
 ## Unfixed Bugs
 There is a dependency issue in the packages in the Code Institute template. The below error message appears when they are installed.  
