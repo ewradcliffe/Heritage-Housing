@@ -161,7 +161,11 @@ These hypotheses are derived from a cursory examination of the data and conventi
 
 
 ## Unfixed Bugs
+There is a dependency issue in the packages in the Code Institute template. The below error message appears when they are installed.  
 
+![](docs/plots/dependency_issue.png)
+
+To resolve this enter `pip install "anyio<4.0" "async-lru<2.0" "rich<10.0"` followed by `pip install twine==3.7.1` to resolve the conflict.
 
 ## Deployment
 The latest version of the App is deployed on [Heroku](https://heritage-house-9fb9b02e459c.herokuapp.com/)
