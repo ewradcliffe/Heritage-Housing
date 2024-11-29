@@ -23,25 +23,25 @@ def project_technical_information_body():
     # Train set
     st.write(f"**Train Set**")
     st.write(
-        f"R2 Score: 0.843  \n Mean Absolute Error: 20617.138  \n"
-        f"Mean Squared Error: 989369562.043  \n Root Mean Squared Error: "
+        f"R2 Score: 0.841  \n Mean Absolute Error: 20725.343  \n"
+        f"Mean Squared Error: 1003982222.455  \n Root Mean Squared Error: "
         f"31454.246"
             )
 
     # Validation set.
     st.write(f"**Validation Set**")
     st.write(
-        f"R2 Score: 0.849  \n Mean Absolute Error: 21183.536  \n"
-        f"Mean Squared Error: 829900380.727  \n Root Mean Squared Error: "
-        f"28807.992"
+        f"R2 Score: 0.841  \n Mean Absolute Error: 21274.337  \n"
+        f"Mean Squared Error: 870859719.18  \n Root Mean Squared Error: "
+        f"29510.332"
             )
 
     # Test set.
     st.write(f"**Test Set**")
     st.write(
-        f"R2 Score: 0.779  \n Mean Absolute Error:22401.275  \n"
-        f"Mean Squared Error: 1529169051.688  \n Root Mean Squared Error: "
-        f"39104.591"
+        f"R2 Score: 0.771  \n Mean Absolute Error:23296.594  \n"
+        f"Mean Squared Error: 1584495831.166  \n Root Mean Squared Error: "
+        f"39805.726"
         )
 
     # Pipeline steps. Based on the pipeline in 07 -
