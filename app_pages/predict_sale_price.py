@@ -74,12 +74,12 @@ def predict_price_input_widget():
             f'Overall quality of the kitchen: '
         )
         st.write(
-            f'Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair'
+            f'Ex: Excellent  \n Gd: Good  \n TA: Typical/Average  \nFa: Fair'
             )
         feature = 'KitchenQual'
         st_widget = st.radio(
             label=feature,
-            options=df[feature].unique()
+            options=['Ex', 'Gd', 'TA', 'Fa']
         )
     X_live[feature] = st_widget
 
