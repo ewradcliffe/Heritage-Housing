@@ -265,3 +265,5 @@ The below libraries were used in the project. The versions used are in brackets 
 
 [Hypothesis testing for data scientists](https://towardsdatascience.com/hypothesis-testing-for-data-scientists-everything-you-need-to-know-8c36ddde4cd2)  by Alicia Horsch
 What is CRISP DM? By Nick Hotz for Data Science Process Alliance.
+
+I would like to thank my mentor, Mo Shami, encouragement and comments.
