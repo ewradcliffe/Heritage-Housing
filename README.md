@@ -215,8 +215,16 @@ Presents the results of the Pearson and Spearman correlation studies. Proof is d
 * The price is displayed when the "get my house price" button is clicked.
 
 ### Page 4: Hypothesis
-1 - List Hypothosis
-2 - Explain how these were validated
+
+This page lists the null and alternative hypothesis (as per the hypothesis section) and displays  scatter plots of the relationship between a particular feature and SalePrice. The features chosen were based on the most strongly correlated features relevant to each hypothesis and are listed below.
+
+* Hypothesis 1 - GarageArea, GrLivArea and TotalBsmtSF.
+
+* Hypothesis 2 - KitchenQual and OverallQual.
+
+* Hypothesis 3. YearBuilt and YearRemodAdd.
+
+A conclusion section for each explains each relationship.
 
 ### Page 5: Peformance (For technical users)
 1 - Display model Performance
