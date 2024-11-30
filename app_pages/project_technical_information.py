@@ -70,7 +70,7 @@ def project_technical_information_body():
         f" TotalBsmtSF."
         )
     st.write(
-        f"The data was then Windsorised to cap outliers based on the Inter "
+        f"The data was then Windsorised to cap outliers based on the Inter-"
         f"Quartile Range (IQR)."
         )
     st.write(f"The data was scaled with StandardScaler")
@@ -86,6 +86,6 @@ def project_technical_information_body():
     st.write(f"Activation functions are all rectified linear unit (ReLU).")
     st.write(
         f"As we created a linear regression model, the output layer consisted "
-        f"of one node, The loss function was Mean Squared Error (MSE), the "
+        f"of one node, The loss function was Mean Squared Error (MSE). The "
         f"optimizer was Adam."
         )
