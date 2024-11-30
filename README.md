@@ -227,8 +227,60 @@ This page lists the null and alternative hypothesis (as per the hypothesis secti
 A conclusion section for each explains each relationship.
 
 ### Page 5: Peformance (For technical users)
-1 - Display model Performance
-2 - Display ML pipeline.
+
+This page provides technical users with 
+
+1. Model Performance
+2. ML pipeline & Model.
+
+#### Model Performance.
+The performance for each of the train, validation and test sets. We note that the model meets the performance criteria of R2 of at least 0.75.
+
+**Train Set**
+R2 Score: 0.841
+Mean Absolute Error: 20725.343
+Mean Squared Error: 1003982222.455
+Root Mean Squared Error: 31454.246
+
+**Validation Set**
+R2 Score: 0.841
+Mean Absolute Error: 21274.337
+Mean Squared Error: 870859719.18
+Root Mean Squared Error: 29510.332
+
+**Test Set**
+R2 Score: 0.771
+Mean Absolute Error:23296.594
+Mean Squared Error: 1584495831.166
+Root Mean Squared Error: 39805.726
+
+
+#### ML pipeline & Model
+
+I have included reasoning for some data cleaning as well as feature engineering.
+
+* EnclosedPorch and WoodDeckSF were removed at the start as 90.7% and 89.4% of their respective data is missing. There was too much missing data to reliably impute and it was not possible to impute the missing data from another category.
+
+* The features identified as strongly or very strongly correlated with SalePrice (GarageArea, GrLivArea, KitchenQual, OverallQual, TotalBsmtSF) were extracted from the data set. Other features were dropped.
+
+* The data was split into train, validate and test sets.
+
+* OrdinalCategoricalEncoder was applied to KitchenQual. PowerTransformer was applied to GarageArea, GrLivArea, OverallQual, TotalBsmtSF.
+
+* The data was then Windsorised to cap outliers based on the Inter-Quartile Range (IQR).
+
+* The data was scaled with StandardScaler
+
+**The model**
+* The model itself consists of a neural network.
+
+* The input layer is equal to the number of features (i.e. 5).
+
+* This is followed by four hidden layers of 512 nodes, each alternating with a dropout layer set to 0.25.
+
+* Activation functions are all rectified linear unit (ReLU).
+
+* As we created a linear regression model, the output layer consisted of one node, The loss function was Mean Squared Error (MSE). the optimizer was Adam.
 
 ## Testing
 The following tests were conducted on the streamlit dashboard
