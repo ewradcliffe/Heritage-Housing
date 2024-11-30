@@ -170,10 +170,20 @@ There is a positive relationship between SalePrice and 'YearBuilt', and 'YearRem
 ## Dashboard Design
 
 ### Page 1: Quick project summary
-1 - Project Terms & Jargon
-	- SalePrice - The price at which a house sale is agreed
-2 - Describe Project Dataset
-3 - State Business Requirements
+
+#### Describe Project Dataset
+The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data) and provided by Code Institute. It features 1460 observations and 23 features.
+
+#### State Business Requirements
+1. The client is interested in discovering how the house attributes correlate with the sale price. 
+
+2. The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+
+#### Project Terms & Jargon
+* Features: The individual characteristics of a house, such as number of bedrooms.
+* Target: The characteristic we are interested in predicting. In this case Sale Price.
+* Saleprice: The price at which a house has been sold in USD.
+* Inherited house: A house the client has inherited and wishes to sell.
 
 ### Page 2: Findings 
 1 - Detail which features are most important in determining house prices.
