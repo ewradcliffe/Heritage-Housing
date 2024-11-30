@@ -96,14 +96,49 @@ These epics were used to develop user stories added to a [kanban board](https://
 
 ## Hypothesis and how to validate?
 
-1 -  We believe there is a positive correlation between the size of a house and the price of a house. We can perform a correlation study to demonstrate this relationship. We expect the relationship to be monotonic. House price will increase as the size increases.
+### Hueristics.
 
-2 - We believe there is a positive correlation between the condition of a house and the price of a house. We can perform a correlation study to demonstrate this relationship. We expect the relationship to be monotonic. House price will increase as quality improves.
+Initial examination of the data revealed that other than the target SalePrice, there were three categories of features:
 
-3 - We believe that the age of the house and how recently it was refurbished is not correlated with the price of the house. We can perform a correlation study to demonstrate this.
+1. Features related to the size of a house.
+2. Features related to the condition of the house.
+3. Features related to time (when the house was constructed or when renovation work was completed).
 
-These hypotheses are derived from a cursory examination of the data and conventional wisdom about factors determining house prices. At this stage they may be seen as closer to heuristics. We will revisit them after each stage to see if we can refine them.
+Based on conventional wisdom we made three heuristic observations about these categories:
 
+1. Larger houses would be more expensive than smaller houses.
+2. Houses in good condition would be more expensive than houses in poor condition.
+3. Age would not affect the value of the house.
+
+We then formulated these heuristics into testable hypothesis:
+
+### Hypothesis 1
+H0 (Null hypothesis): There is no correlation between the size of the house and the price of a house.
+
+H1 (Alternative hypothesis): There is a positive correlation between the size of the house and the price of a house.
+
+### Hypothesis 2
+H0 (Null hypothesis): There is no correlation between the condition of the house and the price of a house.
+
+H1 (Alternative hypothesis): There is a positive correlation between the condition of the house and the price of a house.
+
+### Hypothesis 3
+H0 (Null hypothesis): There is no correlation between the age of the house and when it was last reconditioned and the price of a house.
+
+H0 (Null hypothesis): There is a positive correlation between the age of the house and when it was last reconditioned and the price of a house.
+
+These Hypotheses are tested in Jupyter notebook 05 - PriceCorrelationStudy. Spearman and Pearson correlations were conducted and the results displayed on the Project Hypothesis page of the dashboard, with the following conclusions.
+
+### Conclusion
+
+### Hypothesis 1
+There is a positive relationship between SalePrice and 'GarageArea', 'GrLivArea', 'TotalBsmtSF'. As these factors increase in size, so does the house price. The null hypothesis is disproven, the alternative hypothesis is true.
+
+### Hypothesis 2
+There is a positive relationship between SalePrice and 'KitchenQual' and 'OverallQual'. As quality ratings increase, so does the house price. The null hypothesis is disproven, the alternative hypothesis is true.
+
+### Hypothesis 3
+There is a positive relationship between SalePrice and 'YearBuilt', and 'YearRemodAdd'. Newer houses and those recently remodelled have higher prices than older houses. The null hypothesis is disproven, the alternative hypothesis is true.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 - **Business Requirement 1:** The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualisations of the correlated variables against the sale price.
