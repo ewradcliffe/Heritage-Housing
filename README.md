@@ -168,6 +168,7 @@ There is a positive relationship between SalePrice and 'YearBuilt', and 'YearRem
 4 - We can also investigate different models for a better R2 score,
 
 ## Dashboard Design
+A dashboard was created to present the project findings to the client. The content was agreed with the client prior to the project and created with the streamlit app.
 
 ### Page 1: Quick project summary
 
