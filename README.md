@@ -199,9 +199,20 @@ Presents the results of the Pearson and Spearman correlation studies. Proof is d
 4. Conclusion section which interprets the data.
 
 ### Page 3: Display 4 houses' attributes and their respective predicted sale price. 
-1 - Display a message informing the summed predicted price for all 4 inherited houses.
-2 - Add interactive input widgets that allow a user to provide real-time house data to predict the sale price.
-3 -  When creating the input widgets for house price prediction, it is critical that the input features are input into the model in the same order that was used when the model was trained. Refer back to the lesson for the code.
+
+1. Displays a dataframe of the prices of the clients inherited houses as predicted by the model.
+
+2. Interactive widget allowing users to input live data to predict a house price using the same model. Considerable attention has been paid to making user experience as intuitive as possible:
+
+* Because the model can only make a prediction if all inputs are provided, the model was trained using only features which were strongly or very strongly correlated with SalePrice. The user only has to gather five features, not twenty one. 
+
+* Radio buttons were used for KitchenQual and OverallQual. Options are based on those in the original data set. The original data set did provide for five grades of KitchenQual however as the original observations only reported four of them and there was no missing data for this feature it wasn't possible to train the model with them.
+
+* Sliders were selected for GarageArea, GrLivArea and TotalBsmtSF to make it easy for the user to move the value over a large range. The minimum input is zero in all cases, as it is possible for any of these features to be absent. The top range was based on an appreciation of the top ranges reported for these features, but rounded up to allow for larger price estimations.
+
+* Radio and slider inputs prevent input data which the model won't recognise.
+
+* The price is displayed when the "get my house price" button is clicked.
 
 ### Page 4: Hypothesis
 1 - List Hypothosis
