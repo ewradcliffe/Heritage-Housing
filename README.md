@@ -8,7 +8,7 @@ Heritage housing is a data analysis project aimed at supporting a client's desir
 
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data).
 
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+* The dataset has 1460 observations and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
@@ -38,17 +38,13 @@ Heritage housing is a data analysis project aimed at supporting a client's desir
 |SalePrice|Sale Price|34900 - 755000|
 
 
-
 #### Initial observations
-1. We don’t know the extent to which the data set captures all of the house sales in the area, or if the distribution reflects the city.
+1. We don't know how representative this sample is:
+  *  We don’t know the extent to which the data set captures all of the house sales in the area, or if feature distribution reflects the city.
+  * We don’t know the time of sale. The housing market can vary over time based on factors such s a change in interest rates.
+  * We don’t know the location within the city. The housing market can vary tremendously in an area depending on factors such as crime rate, distance to amenities etc.
+
 2. There is significant missing data. We will need a strategy to deal with this.
-3. We don’t know the time of sale. The housing market can vary over time based on factors such s a change in interest rates.
-4. We don’t know the location within the city. The housing market can vary tremendously in an area depending on factors such as crime rate, distance to amenities etc.
-
-
-
-
-
 
 ## Business Requirements
 
