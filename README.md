@@ -187,8 +187,16 @@ The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housin
 * Inherited house: A house the client has inherited and wishes to sell.
 
 ### Page 2: Findings 
-1 - Detail which features are most important in determining house prices.
-2 - Demonstrate the proof.
+
+Presents the results of the Pearson and Spearman correlation studies. Proof is demonstrated by:
+
+1. Dataframe showing which features are strongly and very strongly correlated with SalePrice.
+
+2. Dataframe showing the correlation of all features with SalePrice. This is collapsible to save space.
+
+3. Data Visualisation: A histogram showing the correlation of all features with SalePrice. Features strongly and very strongly correlated are emphasised by their colour and a threshold line has been added to support and clarify the results.
+
+4. Conclusion section which interprets the data.
 
 ### Page 3: Display 4 houses' attributes and their respective predicted sale price. 
 1 - Display a message informing the summed predicted price for all 4 inherited houses.
