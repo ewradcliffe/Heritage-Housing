@@ -5,12 +5,12 @@ import pandas as pd
 def project_findings_body():
     # Function to render page.
     st.header("**Findings**")
-    st.write(f"Our client has asked us to determine which features"
+    st.write(f"Our client has asked us to determine which features "
              f"in a house correlated most closely with the SalePrice."
              )
     st.write(f"To do this we performed both Pearson and "
              f"Spearman correlations. Both studies measure "
-             f"The mathematical relationship between the"
+             f"the mathematical relationship between the"
              f"features. A coefficient of between 0.6 and "
              f"0.8 is considered strong. Higher than 0.8 is "
              f"considered very strong."

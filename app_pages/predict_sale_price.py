@@ -37,7 +37,7 @@ def predict_sale_price_body():
     # Input widget for live predictions.
     st.subheader(f"**Predict a house price.**")
     st.write(f"To predict the price of any other house using the same model,"
-             f"please enter the details below.")
+             f" please enter the details below.")
 
     # Display input widget
     X_live = predict_price_input_widget()

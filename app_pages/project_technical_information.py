@@ -43,6 +43,10 @@ def project_technical_information_body():
         f"Mean Squared Error: 1584495831.166  \n Root Mean Squared Error: "
         f"39805.726"
         )
+    st.write(
+        "We can see all three data sets exceed out target metric of R2 "
+        "of at least 0.75."
+        )
 
     # Pipeline steps. Based on the pipeline in 07 -
     # ModellingMostImportantFeatures
