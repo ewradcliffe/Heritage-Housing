@@ -141,20 +141,20 @@ There is a positive relationship between SalePrice and 'KitchenQual' and 'Overal
 There is a positive relationship between SalePrice and 'YearBuilt', and 'YearRemodAdd'. Newer houses and those recently remodelled have higher prices than older houses. The null hypothesis is disproven, the alternative hypothesis is true.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
-- **Business Requirement 1:** The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualisations of the correlated variables against the sale price.
+**Business Requirement 1:** The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualisations of the correlated variables against the sale price.  
 
-1 -  We will inspect the data related to house prices
-2 - We will perform Pearson and Spearman correlation studies to investigate how the variables are related to Sale Price.
-3 - We can extract the most important variables.
-5 - We will plot the main variables against Sale Price to assist the client in visualising the relationship between them.
-6 - We will display this on the dashboard.
+*  We will inspect the data related to house prices  
+* We will perform Pearson and Spearman correlation studies to investigate how the variables are related to Sale Price.  
+* We can extract the most important variables.
+* We will plot the main variables against Sale Price to assist the client in visualising the relationship between them.
+* We will display this on the dashboard.
 
 
-- **Business Requirement 2:** The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.
-1 - We want to be able to predict the best sale price of the clients houses. We want to use an ML model based on regression analysis.
-2 - We can train, validate and test the model using the data provided. 
-3 - We can use this model to provide the client with estimations as to the best sale price for her houses, and display it on the dashboard.
-4 - We can add input widgets for the most important variables to the dashboard, so the client can see the potential Sale Price of any other house in Ames, Iowa.
+**Business Requirement 2:** The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.  
+* We want to be able to predict the best sale price of the clients houses. We want to use an ML model based on regression analysis.
+* We can train, validate and test the model using the data provided. 
+* We can use this model to provide the client with estimations as to the best sale price for her houses, and display it on the dashboard.
+* We can add input widgets for the most important variables to the dashboard, so the client can see the potential Sale Price of any other house in Ames, Iowa.
 
 ## ML Business Case
 ### Predict house prices
