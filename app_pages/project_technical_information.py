@@ -45,7 +45,7 @@ def project_technical_information_body():
         )
     st.write(
         "We can see all three data sets exceed out target metric of R2 "
-        "of at least 0.75."
+        "of at least 0.75. Our model is successful."
         )
 
     # Pipeline steps. Based on the pipeline in 07 -
