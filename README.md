@@ -188,7 +188,7 @@ The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housin
 
 ### Page 2: Findings 
 
-Presents the results of the Pearson and Spearman correlation studies. Proof is demonstrated by:
+Answers business requirement 1 by presenting the results of the Pearson and Spearman correlation studies. Proof is demonstrated by:
 
 1. Dataframe showing which features are strongly and very strongly correlated with SalePrice.
 
@@ -199,6 +199,8 @@ Presents the results of the Pearson and Spearman correlation studies. Proof is d
 4. Conclusion section which interprets the data.
 
 ### Page 3: Display 4 houses' attributes and their respective predicted sale price. 
+
+Answers business requirement 2. 
 
 1. Displays a dataframe of the prices of the clients inherited houses as predicted by the model.
 
