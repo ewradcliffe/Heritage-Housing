@@ -171,6 +171,7 @@ There is a positive relationship between SalePrice and 'YearBuilt', and 'YearRem
 The Data Understanding, Data Preparation and Modelling phases of the CRISP-DM paradigm were undertaken in Jupyter Notebooks.  
 
 ### 01 - Data Collection
+The House Price dataset and Inherited Houses dataset was sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data) and saved as CSV files.
 
 ### 02 - Data Inspection
 
