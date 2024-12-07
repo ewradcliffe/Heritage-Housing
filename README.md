@@ -165,7 +165,25 @@ There is a positive relationship between SalePrice and 'YearBuilt', and 'YearRem
 
 3 - We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
 
-4 - We can also investigate different models for a better R2 score,
+4 - We can also investigate different models for a better R2 score.
+
+## Data understanding, preparation and modelling.
+The Data Understanding, Data Preparation and Modelling phases of the CRISP-DM paradigm were undertaken in Jupyter Notebooks.  
+
+### 01 - Data Collection
+
+### 02 - Data Inspection
+
+### 03 - Data Cleaning
+
+### 04 - Feature Engineering
+
+### 05 - Price Correlation Study
+
+### 06 - Modelling and Evaluation.
+
+### 07 - Modelling most imprtant Features.
+
 
 ## Dashboard Design
 A dashboard was created to present the project findings to the client. The content was agreed with the client prior to the project and created with the streamlit app.
