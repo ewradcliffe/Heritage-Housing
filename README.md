@@ -174,6 +174,10 @@ The Data Understanding, Data Preparation and Modelling phases of the CRISP-DM pa
 The House Price dataset and Inherited Houses dataset was sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data) and saved as CSV files.
 
 ### 02 - Data Inspection
+The data was loaded and investigations were performed to describe the data, establishing the type, distribution, extent of missing data and outliers of the housing data set. Scatter plots visualised the relationships between the features and target variable (SalePrice). A number of observations were recorded, notably that there was substantial missing data, and that the features could be placed into three categories: Features related to house size, features related to house condition and features related to house quality. These investigations were critical to formulating the three hypotheses and are detailed in the notebook in full.
+
+The Inherited house data set was loaded however only limited investigations were necessary as we will not be using this data to produce a model.
+
 
 ### 03 - Data Cleaning
 
