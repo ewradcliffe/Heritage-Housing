@@ -176,10 +176,18 @@ The House Price dataset and Inherited Houses dataset was sourced from [Kaggle](h
 ### 02 - Data Inspection
 The data was loaded and investigations were performed to describe the data, establishing the type, distribution, extent of missing data and outliers of the housing data set. Scatter plots visualised the relationships between the features and target variable (SalePrice). A number of observations were recorded, notably that there was substantial missing data, and that the features could be placed into three categories: Features related to house size, features related to house condition and features related to house quality. These investigations were critical to formulating the three hypotheses and are detailed in the notebook in full.
 
-The Inherited house data set was loaded however only limited investigations were necessary as we will not be using this data to produce a model.
-
+The Inherited house data set was loaded however only limited investigations were necessary as we will not be using this data to produce a model, and no data was missing.
 
 ### 03 - Data Cleaning
+This section, along with Feature Engineering, constitutes the data preparation phase of CRISP-DM. The purpose of this notebook was to clean the data in preparation for subsequent investigative phases, guided by observations from the Data Inspection notebook. Since machine learning models require complete datasets for training, handling missing data was a critical step.
+
+The features 'EnclosedPorch' and 'WoodDeckSF' were removed from both datasets due to the extensive missing data they contained. Imputing these missing values posed a higher risk of distorting the analysis compared to simply omitting these features.
+
+Following this step, 797 observations in the House Price dataset remained complete. Further investigations examined the impact of various imputation methods on the data.
+
+Several numeric, continuous features ('LotFrontage,' 'BedroomAbvGr,' '2ndFlrSF,' 'GarageYrBlt,' and 'MasVnrArea') exhibited skewed distributions (either positively or negatively). Imputation using the median was explored, as it was found to have minimal impact on the features' distribution and range. This approach significantly increased the number of usable observations without introducing substantial distortion, making it the preferred method for this dataset.
+
+For categorical features such as 'GarageFinish' and 'BsmtFinType1,' missing values were treated as representing the absence of the corresponding feature (e.g., houses without a garage or a finished basement). Investigations confirmed that this approach had little effect on the data's overall distribution, and it was therefore applied to the House Price dataset.
 
 ### 04 - Feature Engineering
 
