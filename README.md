@@ -190,6 +190,15 @@ Several numeric, continuous features ('LotFrontage,' 'BedroomAbvGr,' '2ndFlrSF,'
 For categorical features such as 'GarageFinish' and 'BsmtFinType1,' missing values were treated as representing the absence of the corresponding feature (e.g., houses without a garage or a finished basement). Investigations confirmed that this approach had little effect on the data's overall distribution, and it was therefore applied to the House Price dataset.
 
 ### 04 - Feature Engineering
+This section, together with Data Cleaning, forms the data preparation phase of CRISP-DM. Both correlation studies and machine learning models require data to be in specific formats, and we have a variety of transformation tools available for this purpose. Before applying these transformations, we first evaluate their effects.
+
+A function is used to analyze the impact of different transformations on the variables. For ordinal variables that are not already in ordinal format, we apply the Ordinal Encoder. For numerical variables, the Power Transformer is selected to address skewness and stabilize variance.
+
+The Data Inspection notebook revealed a significant number of outliers. Instead of removing them, we use the Windsoriser, which caps extreme values at specified minimum and maximum limits. This approach retains more observations while mitigating the influence of outliers.
+
+Next, we examine the impact of Feature Scaling, which standardizes variables to a common scale. This prevents any single variable from disproportionately influencing the model.
+
+Finally, we assess feature correlations using Pearson and Spearman correlation tests. Features with strong correlations (above 0.6) are identified for removal. Eliminating these redundant features reduces the model’s complexity and training time without compromising accuracy.
 
 ### 05 - Price Correlation Study
 
