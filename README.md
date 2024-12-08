@@ -192,13 +192,14 @@ For categorical features such as 'GarageFinish' and 'BsmtFinType1,' missing valu
 ### 04 - Feature Engineering
 This section, together with Data Cleaning, forms the data preparation phase of CRISP-DM. Both correlation studies and machine learning models require data to be in specific formats, and we have a variety of transformation tools available for this purpose. Before applying these transformations, we first evaluate their effects.
 
-A function is used to analyse the impact of different transformations on the variables. For ordinal variables that are not already in ordinal format, we apply the OrdinalEncoder from sklearn. For numerical variables, the Power Transformer is selected to address skewness and stabilize variance.
+A function is used to analyse the impact of different transformations on the variables. For ordinal variables that are not already in ordinal format, we apply the OrdinalEncoder from sklearn. For numerical variables, the Power Transformer from Pythons Feature Engine library is selected to address skewness and stabilise variance.
 
-The Data Inspection notebook revealed a significant number of outliers. Instead of removing them, we use the Windsoriser, which caps extreme values at specified minimum and maximum limits. This approach retains more observations while mitigating the influence of outliers.
+The Data Inspection notebook revealed a significant number of outliers. Instead of removing them, we use the Windsoriser from Feature Engine, which caps extreme values at specified minimum and maximum limits. This approach retains more observations while mitigating the influence of outliers.
 
-Next, we examine the impact of Feature Scaling, which standardizes variables to a common scale. This prevents any single variable from disproportionately influencing the model.
+Next, we examine the impact of Feature Scaling, which standardises variables to a common scale. This prevents any single variable from disproportionately influencing the model. We choose the StandardScaler from Feature Engine.
 
 Finally, we assess feature correlations using Pearson and Spearman correlation tests. Features with strong correlations (above 0.6) are identified for removal. Eliminating these redundant features reduces the model’s complexity and training time without compromising accuracy.
+
 
 ### 05 - Price Correlation Study
 The Price Correlation Study addresses the first business requirement: understanding how house attributes correlate with sale prices and generating data for client visualisations on our dashboard. This study also supports testing our three hypotheses.
@@ -208,8 +209,20 @@ Categorical data is encoded using the sklearn OrdinalEncoder before performing P
 We combine the findings from both methods and create visualizations to present to the client. The data is also used to test our three hypotheses, with additional visualizations prepared to illustrate the results.
 
 ### 06 - Modelling and Evaluation.
+This notebook is one of two dedicated to the modelling phase of the CRISP-DM methodology. It focuses on addressing the second business requirement: predicting house sale prices for our client's four inherited houses and any other house in Ames, Iowa.
 
-### 07 - Modelling most imprtant Features.
+The cleaned house price dataset is loaded and split into training, testing, and validation sets. A pipeline is built to implement the data transformation steps outlined in the Feature Engineering notebook. For this pipeline, we opted to use the Ordinal Encoder from Feature Engine instead of sklearn to ensure better integration. This choice does not affect the reliability of the transformed data.
+
+A linear regression model is developed using a neural network architecture. The input layer contains a number of nodes equal to the number of input features, while the output layer, as required for regression, has a single node. After extensive experimentation, the best-performing configuration was determined to include four hidden layers of 512 nodes, each followed by a dropout layer with a rate of 0.25. The activation function for all layers is Rectified Linear Unit (ReLU). The model is optimized using Adam, with the loss function set to Mean Squared Error (MSE).
+
+Model performance is evaluated based on the agreed criterion of achieving an R² score of at least 0.75.
+
+#### Key Notes:
+Model Deployment: The model and pipeline in this notebook were not deployed to the dashboard. Instead, a second model and pipeline were created in Notebook 07 - Modelling Most Important Features to provide a better user experience. However, this notebook remains a crucial part of the project documentation, as it contains the foundational work for the modelling phase.
+
+Encoder Correction: Initially, the Ordinal Encoder was set to arbitrary encoding instead of ordered encoding, which caused unexpected behavior during early testing. While the pipeline from this notebook was not deployed, the error has been corrected, and the model was retrained on the updated pipeline for the convenience of future developers.
+
+### 07 - Modelling most important Features.
 
 
 ## Dashboard Design
