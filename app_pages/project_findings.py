@@ -48,30 +48,38 @@ def project_findings_body():
              f"SalePrice and different features in the bar chart below.")
     st.write(f"The red line is a correlation coefficient of 1.2.")
 
-    # Bar plot showing combined Pearson and Spearman correlation coefficiancies
-    # Derived from code in notebook 05 - PriceCorrelationStudy.
-    plt.figure(figsize=(30, 15))
-    plt.bar(combined_correlation_df['Feature'], combined_correlation_df["Score"],
-        color = 'plum', label = "Strongly correlated")
-    plt.bar(categories_to_study_df['Feature'], categories_to_study_df["Score"], 
-        color = 'indigo', label = "Weak or moderate correlation")
 
-    # Add title and axes labels
-    plt.title("Correlation between SalesPrice and Features", fontsize = 25)
-    plt.xlabel('House Features', fontsize = 20) 
-    plt.ylabel('Combined Pearson and Spearman correlation coefficiancy', fontsize = 20) 
+    def show_correlation(threshold):
+        # Bar plot showing combined Pearson and Spearman correlation coefficiancies
+        # Derived from code in notebook 05 - PriceCorrelationStudy.
+        
+        # Extract features exceeding threshold.
+        features_exceed_threshold_df = combined_correlation_df.query(f'Score >= {threshold}')
 
-    # Rotate X-axis labels
-    plt.xticks(rotation = 45)
+        plt.figure(figsize=(30, 15))
+        plt.bar(combined_correlation_df['Feature'], combined_correlation_df["Score"],
+            color = 'plum', label = "Strongly correlated")
+        plt.bar(features_exceed_threshold_df['Feature'], features_exceed_threshold_df["Score"], 
+            color = 'indigo', label = "Weak or moderate correlation")
 
-    # Display a horizontal line at the threshold.
-    plt.axhline(y = 1.2, color = 'r', linestyle = '-', label = "Threshold of strong correlation")
+        # Add title and axes labels
+        plt.title("Correlation between SalesPrice and Features", fontsize = 25)
+        plt.xlabel('House Features', fontsize = 20) 
+        plt.ylabel('Combined Pearson and Spearman correlation coefficiancy', fontsize = 20) 
 
-    # Add a legend
-    plt.legend(bbox_to_anchor = (1.0, 1), loc = 'upper right') 
+        # Rotate X-axis labels
+        plt.xticks(rotation = 45)
 
-    st.pyplot(plt)
+        # Display a horizontal line at the threshold.
+        plt.axhline(y = threshold, color = 'r', linestyle = '-', label = "Threshold of strong correlation")
 
+        # Add a legend
+        plt.legend(bbox_to_anchor = (1.0, 1), loc = 'upper right') 
+
+        return plt
+
+    # call function to render chart
+    st.pyplot(show_correlation(1))
 
     st.subheader(f"Conclusion")
     st.write(f"We can conclude that OverallQual is very "
