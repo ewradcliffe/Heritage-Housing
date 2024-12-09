@@ -1,8 +1,15 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 def project_findings_body():
+    # load dataset.
+    combined_correlation_df = (
+    pd.read_csv(
+        "outputs/datasets/correlation_study/combined_correlation_df.csv"
+                ))
+    
     # Function to render page.
     st.header("**Findings**")
     st.write(f"Our client has asked us to determine which features "
@@ -32,11 +39,6 @@ def project_findings_body():
     # checkbox to see all correlation coefficient
     if st.checkbox(f"Tick to view the correlation coefficient "
                    f"of all features "):
-        combined_correlation_df = (
-            pd.read_csv(
-                f"outputs/datasets/correlation_study/"
-                f"combined_correlation_df.csv"
-                        ))
         combined_correlation_df.drop(columns=['Study'], axis=1, inplace=True)
         st.write(combined_correlation_df)
 
@@ -45,9 +47,31 @@ def project_findings_body():
     st.write(f"We can see relative strengths of the correlation between "
              f"SalePrice and different features in the bar chart below.")
     st.write(f"The red line is a correlation coefficient of 1.2.")
-    st.image(
-        "docs/plots/correlation_between_salesprice_and_features.png"
-        )
+
+    # Bar plot showing combined Pearson and Spearman correlation coefficiancies
+    # Derived from code in notebook 05 - PriceCorrelationStudy.
+    plt.figure(figsize=(30, 15))
+    plt.bar(combined_correlation_df['Feature'], combined_correlation_df["Score"],
+        color = 'plum', label = "Strongly correlated")
+    plt.bar(categories_to_study_df['Feature'], categories_to_study_df["Score"], 
+        color = 'indigo', label = "Weak or moderate correlation")
+
+    # Add title and axes labels
+    plt.title("Correlation between SalesPrice and Features", fontsize = 25)
+    plt.xlabel('House Features', fontsize = 20) 
+    plt.ylabel('Combined Pearson and Spearman correlation coefficiancy', fontsize = 20) 
+
+    # Rotate X-axis labels
+    plt.xticks(rotation = 45)
+
+    # Display a horizontal line at the threshold.
+    plt.axhline(y = 1.2, color = 'r', linestyle = '-', label = "Threshold of strong correlation")
+
+    # Add a legend
+    plt.legend(bbox_to_anchor = (1.0, 1), loc = 'upper right') 
+
+    st.pyplot(plt)
+
 
     st.subheader(f"Conclusion")
     st.write(f"We can conclude that OverallQual is very "
