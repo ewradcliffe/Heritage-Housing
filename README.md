@@ -2,7 +2,12 @@
 
 ## Overview
 
-Heritage housing is a data analysis project aimed at supporting a client's desire to maximise the sale price of houses they have inherited in Ames, Iowa. The client has provided a set of data detailing the sale price of houses in that area along with particular features of those houses. They have asked us to use this to determine the best possible sale price for her houses, and provide an understanding of how the features of a house affect sale price. This is fully explored in the Business Requirements section below. Results of this analysis are to be presented in a streamlit dashboard hosted on [Heroku](https://heritage-house-9fb9b02e459c.herokuapp.com/).
+The Heritage Housing project is a data analysis project designed to help a client maximise the sale price of homes they have inherited in Ames, Iowa. To achieve this, the client has provided a dataset that includes house sale prices and various features of the properties. Our goal is twofold: to identify the optimal sale price for these homes and to analyze how specific property features influence their market value. These objectives are further detailed in the Business Requirements section.
+
+The project findings are presented through an interactive Streamlit dashboard, hosted on [Heroku](https://heritage-house-9fb9b02e459c.herokuapp.com/), allowing for easy visualisation and exploration of the results.
+
+To ensure a structured and systematic approach, the project follows the CRoss Industry Standard Process for Data Mining (CRISP-DM). This six-phase methodology provides a comprehensive framework for navigating the data science life cycle, from understanding the business problem to delivering actionable insights.
+
 
 ## Dataset Content
 
