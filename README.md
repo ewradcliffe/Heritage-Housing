@@ -238,8 +238,8 @@ The same pipeline and model architecture were applied. Experiments showed that r
 
 Finally, the clients Inherited house dataset was put through the pipeline and model to produce house price predictions which could be displayed on the dashboard.
 
-## Dashboard Design
-A dashboard was created to present the project findings to the client. The content was agreed with the client prior to the project and created with the streamlit app.
+## Deployment & Dashboard design
+The final phase of the CRISP-DM process is to deploy the project in such a way that we can present our findings to the client. Content was agreed with the client prior to the project and created with the streamlit app.
 
 ### Page 1: Quick project summary
 
