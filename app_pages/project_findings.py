@@ -36,12 +36,6 @@ def project_findings_body():
     categories_to_study_df.drop(columns=['Study'], axis=1, inplace=True)
     st.write(categories_to_study_df)
 
-    # checkbox to see all correlation coefficient
-    if st.checkbox(f"Tick to view the correlation coefficient "
-                   f"of all features "):
-        combined_correlation_df.drop(columns=['Study'], axis=1, inplace=True)
-        st.write(combined_correlation_df)
-
     # display image of price correlation study
     st.subheader(f"Strongly correlated features")
     st.write(f"We can see relative strengths of the correlation between "
@@ -103,6 +97,14 @@ def project_findings_body():
 
     # Call function.
     st.plotly_chart(show_correlation(combined_correlation_df, select_threshold))
+
+
+    # checkbox to see all correlation coefficient
+    if st.checkbox(f"Tick to view the correlation coefficient "
+                   f"of all features "):
+        combined_correlation_df.drop(columns=['Study'], axis=1, inplace=True)
+        st.write(combined_correlation_df)
+
 
     st.subheader(f"Conclusion")
     st.write(f"We can conclude that OverallQual is very "
