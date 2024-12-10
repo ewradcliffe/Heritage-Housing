@@ -216,7 +216,7 @@ Categorical data is encoded using the sklearn OrdinalEncoder before performing P
 We combine the findings from both methods and create visualisations to present to the client. The data is also used to test our three hypotheses, with additional visualisations prepared to illustrate the results. Please see the hypothesis section above for a full breakdown.
 
 ### 06 - Modelling and Evaluation.
-This notebook is one of two dedicated to the modelling phase of the CRISP-DM methodology. It focuses on addressing the second business requirement: predicting house sale prices for our client's four inherited houses and any other house in Ames, Iowa.
+This notebook is one of two dedicated to the modelling and evaluation phases of the CRISP-DM methodology. It focuses on addressing the second business requirement: predicting house sale prices for our client's four inherited houses and any other house in Ames, Iowa.
 
 The cleaned house price dataset is loaded and split into training, testing, and validation sets. A pipeline is built to implement the data transformation steps outlined in the Feature Engineering notebook. For this pipeline, we opted to use the Ordinal Encoder from Feature Engine instead of sklearn to ensure better integration. This choice does not affect the reliability of the transformed data.
 
