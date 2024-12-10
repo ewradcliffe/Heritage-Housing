@@ -55,6 +55,8 @@ These epics were used to develop user stories added to a [kanban board](https://
 
 ## Dataset Content
 
+The next phase of the CRISP-DM process focuses on data understanding. Most of this phase was conducted in jupyter Notebook 02 - Data Inspection, where the dataset was explored in detail. For the convenience of other analysts, the data is presented here along with a summary of initial observations to provide a clear starting point for further analysis.
+
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data).
 
 * The dataset has 1460 observations and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
