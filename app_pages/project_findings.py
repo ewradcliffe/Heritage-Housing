@@ -78,8 +78,15 @@ def project_findings_body():
 
         return plt
 
+    # Input widget allowing user to alter threshold in show_correlatin
+    user_choice = st.slider(label="Select threshold",
+                            min_value=0.0,
+                            max_value=2.0,
+                            value=1.2,
+                            step=0.01)
+ 
     # call function to render chart
-    st.pyplot(show_correlation(1))
+    st.pyplot(show_correlation(float(user_choice)))
 
     st.subheader(f"Conclusion")
     st.write(f"We can conclude that OverallQual is very "
