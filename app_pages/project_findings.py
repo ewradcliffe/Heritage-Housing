@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 
 
 def project_findings_body():
@@ -46,47 +46,63 @@ def project_findings_body():
     st.subheader(f"Strongly correlated features")
     st.write(f"We can see relative strengths of the correlation between "
              f"SalePrice and different features in the bar chart below.")
-    st.write(f"The red line is a correlation coefficient of 1.2.")
+    st.write(
+        f"Adjust the input slider to see which features would be "
+        f"included or excluded by changing the coefficiancy at which we "
+        f"select features.")
 
+    def show_correlation(correlation_df, threshold):
+        """
+        Create interactive Plotly bar chart to display correlations.
+        """
+        # Filter DataFrame based on the threshold
+        features_exceed_threshold = correlation_df[correlation_df["Score"] >= threshold]
+        features_below_threshold = correlation_df[correlation_df["Score"] < threshold]
 
-    def show_correlation(threshold):
-        # Bar plot showing combined Pearson and Spearman correlation coefficiancies
-        # Derived from code in notebook 05 - PriceCorrelationStudy.
-        
-        # Extract features exceeding threshold.
-        features_exceed_threshold_df = combined_correlation_df.query(f'Score >= {threshold}')
+        # Create the Plotly figure
+        fig = go.Figure()
 
-        plt.figure(figsize=(30, 15))
-        plt.bar(combined_correlation_df['Feature'], combined_correlation_df["Score"],
-            color = 'plum', label = "Strongly correlated")
-        plt.bar(features_exceed_threshold_df['Feature'], features_exceed_threshold_df["Score"], 
-            color = 'indigo', label = "Weak or moderate correlation")
+        # Features exceeding the threshold
+        fig.add_trace(go.Bar(
+            x=features_exceed_threshold['Feature'],
+            y=features_exceed_threshold['Score'],
+            name="Exceeding Threshold",
+            marker_color='indigo',
+            hoverinfo='x+y'
+        ))
 
-        # Add title and axes labels
-        plt.title("Correlation between SalesPrice and Features", fontsize = 25)
-        plt.xlabel('House Features', fontsize = 20) 
-        plt.ylabel('Combined Pearson and Spearman correlation coefficiancy', fontsize = 20) 
+        # Features below the threshold
+        fig.add_trace(go.Bar(
+            x=features_below_threshold['Feature'],
+            y=features_below_threshold['Score'],
+            name="Below Threshold",
+            marker_color='plum',
+            hoverinfo='x+y',
+        ))
 
-        # Rotate X-axis labels
-        plt.xticks(rotation = 45)
+        fig.update_layout(
+            title="Correlation between SalesPrice and Features",
+            xaxis_title="House Features",
+            yaxis_title="Combined Pearson and Spearman Correlation Coefficient",
+            barmode="group",
+            hovermode="x unified",
+            legend=dict(x=1.05, y=1),
+            margin=dict(l=40, r=40, t=80, b=40),
+            xaxis_tickangle=45,
+            template="plotly_white"
+        )
 
-        # Display a horizontal line at the threshold.
-        plt.axhline(y = threshold, color = 'r', linestyle = '-', label = "Threshold of strong correlation")
+        return fig
 
-        # Add a legend
-        plt.legend(bbox_to_anchor = (1.0, 1), loc = 'upper right') 
-
-        return plt
-
-    # Input widget allowing user to alter threshold in show_correlatin
-    user_choice = st.slider(label="Select threshold",
+    # Input slider to adjust threshold.
+    select_threshold = st.slider(label="Select threshold",
                             min_value=0.0,
                             max_value=2.0,
                             value=1.2,
                             step=0.01)
- 
-    # call function to render chart
-    st.pyplot(show_correlation(float(user_choice)))
+
+    # Call function.
+    st.plotly_chart(show_correlation(combined_correlation_df, select_threshold))
 
     st.subheader(f"Conclusion")
     st.write(f"We can conclude that OverallQual is very "
