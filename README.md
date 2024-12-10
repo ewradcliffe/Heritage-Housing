@@ -128,7 +128,6 @@ The next phase of the CRISP-DM process focuses on data understanding. Most of th
 2. There is significant missing data. We will need a strategy to deal with this.
 
 
-
 ## Hypothesis and how to validate?
 
 ### Hueristics.
@@ -214,7 +213,7 @@ The Price Correlation Study addresses the first business requirement: understand
 
 Categorical data is encoded using the sklearn OrdinalEncoder before performing Pearson and Spearman correlation analyses between each feature and the sale price. These methods are suited to different data types, and comparing their results provides a broader perspective. Notably, both analyses consistently identify the three most strongly correlated features.
 
-We combine the findings from both methods and create visualizations to present to the client. The data is also used to test our three hypotheses, with additional visualizations prepared to illustrate the results.
+We combine the findings from both methods and create visualisations to present to the client. The data is also used to test our three hypotheses, with additional visualisations prepared to illustrate the results. Please see the hypothesis section above for a full breakdown.
 
 ### 06 - Modelling and Evaluation.
 This notebook is one of two dedicated to the modelling phase of the CRISP-DM methodology. It focuses on addressing the second business requirement: predicting house sale prices for our client's four inherited houses and any other house in Ames, Iowa.
