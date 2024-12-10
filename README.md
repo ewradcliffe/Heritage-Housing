@@ -256,9 +256,9 @@ Answers business requirement 1 by presenting the results of the Pearson and Spea
 
 1. Dataframe showing which features are strongly and very strongly correlated with SalePrice.
 
-2. Dataframe showing the correlation of all features with SalePrice. This is collapsible to save space.
+2. Data Visualisation: An interactive plotly chart shows the combined correlation of all features. Users can control the threshold at which features are selected with a slider input widget to group features together.
 
-3. Data Visualisation: A histogram showing the correlation of all features with SalePrice. Features strongly and very strongly correlated are emphasised by their colour and a threshold line has been added to support and clarify the results.
+3. Dataframe showing the correlation of all features with SalePrice. This is collapsible to save space.
 
 4. Conclusion section which interprets the data.
 
@@ -484,7 +484,9 @@ The below libraries were used in the project. The versions used are in brackets 
 
 * tensorflow-cpu (2.6.0) and keras (2.6.0) were used to create a neural network model.
 
-* plotly (4.12.0), protobuf (3.20) & altair (<5>). Are installed as part of the Code Institute template but not used.
+* plotly (4.12.0) was used to create an interactive chart in the project findings page of the dashboard.
+
+* protobuf (3.20) & altair (<5>). Are installed as part of the Code Institute template but not used.
 
 
 ## Credits
