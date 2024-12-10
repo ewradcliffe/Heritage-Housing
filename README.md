@@ -9,7 +9,7 @@ The project findings are presented through an interactive Streamlit dashboard, h
 To ensure a structured and systematic approach, the project follows the CRoss Industry Standard Process for Data Mining (CRISP-DM). This six-phase methodology provides a comprehensive framework for navigating the data science life cycle, from understanding the business problem to delivering actionable insights.
 
 ## Business objectives:
-The CRISP-DM process starts with a thorough analysis of business objectives. For this project they were clearly defined in [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/). They are presented unaltered here.
+The CRISP-DM process starts with a thorough analysis of business objectives. For this project they were clearly defined in [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/). They are presented largely unaltered here.
 
 As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
@@ -52,6 +52,36 @@ These epics were used to develop user stories added to a [kanban board](https://
 
 #### How will the client benefit?
 1. The client will maximise the sales price for the inherited properties.
+
+
+## The rationale to map the business requirements to the Data Visualisations and ML tasks
+**Business Requirement 1:** The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualisations of the correlated variables against the sale price.  
+
+*  We will inspect the data related to house prices  
+* We will perform Pearson and Spearman correlation studies to investigate how the variables are related to Sale Price.  
+* We can extract the most important variables.
+* We will plot the main variables against Sale Price to assist the client in visualising the relationship between them.
+* We will display this on the dashboard.
+
+
+**Business Requirement 2:** The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.  
+* We want to be able to predict the best sale price of the clients houses. We want to use an ML model based on regression analysis.
+* We can train, validate and test the model using the data provided. 
+* We can use this model to provide the client with estimations as to the best sale price for her houses, and display it on the dashboard.
+* We can add input widgets for the most important variables to the dashboard, so the client can see the potential Sale Price of any other house in Ames, Iowa.
+
+## ML Business Case
+Given the above there is a clear business case for a data study and the creation of a machine learning model.
+
+### Predict house prices
+#### Regression Model
+1 - We want an ML model to predict the highest sale price based on the data collected. As the target variable is price, a regression model is most appropriate. We want to be able to output a single figure - price. 
+
+2 - The ideal outcome is to be able to provide our client with a tool for accurately predicting house prices and an understanding of what the most important variables for determining house prices are.
+
+3 - We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
+
+4 - We can also investigate different models for a better R2 score.
 
 ## Dataset Content
 
@@ -96,6 +126,8 @@ The next phase of the CRISP-DM process focuses on data understanding. Most of th
   * We don’t know the location within the city. The housing market can vary tremendously in an area depending on factors such as crime rate, distance to amenities etc.
 
 2. There is significant missing data. We will need a strategy to deal with this.
+
+
 
 ## Hypothesis and how to validate?
 
@@ -142,33 +174,6 @@ There is a positive relationship between SalePrice and 'KitchenQual' and 'Overal
 
 ### Hypothesis 3
 There is a positive relationship between SalePrice and 'YearBuilt', and 'YearRemodAdd'. Newer houses and those recently remodelled have higher prices than older houses. The null hypothesis is disproven, the alternative hypothesis is true.
-
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
-**Business Requirement 1:** The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualisations of the correlated variables against the sale price.  
-
-*  We will inspect the data related to house prices  
-* We will perform Pearson and Spearman correlation studies to investigate how the variables are related to Sale Price.  
-* We can extract the most important variables.
-* We will plot the main variables against Sale Price to assist the client in visualising the relationship between them.
-* We will display this on the dashboard.
-
-
-**Business Requirement 2:** The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.  
-* We want to be able to predict the best sale price of the clients houses. We want to use an ML model based on regression analysis.
-* We can train, validate and test the model using the data provided. 
-* We can use this model to provide the client with estimations as to the best sale price for her houses, and display it on the dashboard.
-* We can add input widgets for the most important variables to the dashboard, so the client can see the potential Sale Price of any other house in Ames, Iowa.
-
-## ML Business Case
-### Predict house prices
-#### Regression Model
-1 - We want an ML model to predict the highest sale price based on the data collected. As the target variable is price, a regression model is most appropriate. We want to be able to output a single figure - price. 
-
-2 - The ideal outcome is to be able to provide our client with a tool for accurately predicting house prices and an understanding of what the most important variables for determining house prices are.
-
-3 - We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
-
-4 - We can also investigate different models for a better R2 score.
 
 ## Data understanding, preparation and modelling.
 The Data Understanding, Data Preparation and Modelling phases of the CRISP-DM paradigm were undertaken in Jupyter Notebooks.  
