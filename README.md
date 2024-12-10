@@ -8,6 +8,50 @@ The project findings are presented through an interactive Streamlit dashboard, h
 
 To ensure a structured and systematic approach, the project follows the CRoss Industry Standard Process for Data Mining (CRISP-DM). This six-phase methodology provides a comprehensive framework for navigating the data science life cycle, from understanding the business problem to delivering actionable insights.
 
+## Business objectives:
+The CRISP-DM process starts with a thorough analysis of business objectives. For this project they were clearly defined in [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/). They are presented unaltered here.
+
+As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+
+Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+
+1. The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+
+2. The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+
+#### Is there any business requirement that can be answered with conventional data analysis?
+1.  Yes, we can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
+
+#### Does the client need a dashboard or an API endpoint?
+1. The client needs a dashboard
+
+#### What does the client consider as a successful project outcome?
+1. A study showing the most relevant variables correlated to sale price.
+2. Also, a capability to predict the sale price for the 4 inherited houses, as well as any other house in Ames, Iowa.
+
+#### Can you break down the project into Epics and User Stories?
+1. Information gathering and data collection.
+2. Data visualisation, cleaning, and preparation.
+3. Model training, optimization and validation.
+4. Dashboard planning, designing, and development.
+5. Dashboard deployment and release.
+
+These epics were used to develop user stories added to a [kanban board](https://github.com/users/ewradcliffe/projects/6) in the project repository.
+
+#### Ethical or Privacy concerns?
+1. No. The client found a public dataset.
+
+#### Does the data suggest a particular model?
+1. The data suggests a regressor where the target is the sale price.
+
+#### What are the model's inputs and intended outputs?
+1. The inputs are house attribute information and the output is the predicted sale price.
+
+#### What are the criteria for the performance goal of the predictions?
+1. We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
+
+#### How will the client benefit?
+1. The client will maximise the sales price for the inherited properties.
 
 ## Dataset Content
 
@@ -50,54 +94,6 @@ To ensure a structured and systematic approach, the project follows the CRoss In
   * We don’t know the location within the city. The housing market can vary tremendously in an area depending on factors such as crime rate, distance to amenities etc.
 
 2. There is significant missing data. We will need a strategy to deal with this.
-
-## Business Requirements
-
-The business requirements are defined in [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/) from The Code Institute.
-
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
-
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
-
-1. The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-2. The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
-
-
-#### Is there any business requirement that can be answered with conventional data analysis?
-1.  Yes, we can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
-
-#### Does the client need a dashboard or an API endpoint?
-1. The client needs a dashboard
-
-#### What does the client consider as a successful project outcome?
-1. A study showing the most relevant variables correlated to sale price.
-2. Also, a capability to predict the sale price for the 4 inherited houses, as well as any other house in Ames, Iowa.
-
-#### Can you break down the project into Epics and User Stories?
-1. Information gathering and data collection.
-2. Data visualisation, cleaning, and preparation.
-3. Model training, optimization and validation.
-4. Dashboard planning, designing, and development.
-5. Dashboard deployment and release.
-
-These epics were used to develop user stories added to a [kanban board](https://github.com/users/ewradcliffe/projects/6) in the project repository.
-
-
-#### Ethical or Privacy concerns?
-1. No. The client found a public dataset.
-
-#### Does the data suggest a particular model?
-1. The data suggests a regressor where the target is the sale price.
-
-#### What are the model's inputs and intended outputs?
-1. The inputs are house attribute information and the output is the predicted sale price.
-
-#### What are the criteria for the performance goal of the predictions?
-1. We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
-
-#### How will the client benefit?
-1. The client will maximise the sales price for the inherited properties.
-
 
 ## Hypothesis and how to validate?
 
