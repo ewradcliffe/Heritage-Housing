@@ -6,10 +6,10 @@ import plotly.graph_objects as go
 def project_findings_body():
     # load dataset.
     combined_correlation_df = (
-    pd.read_csv(
-        "outputs/datasets/correlation_study/combined_correlation_df.csv"
+        pd.read_csv(
+         "outputs/datasets/correlation_study/combined_correlation_df.csv"
                 ))
-    
+
     # Function to render page.
     st.header("**Findings**")
     st.write(f"Our client has asked us to determine which features "
@@ -50,8 +50,10 @@ def project_findings_body():
         Create interactive Plotly bar chart to display correlations.
         """
         # Filter DataFrame based on the threshold
-        features_exceed_threshold = correlation_df[correlation_df["Score"] >= threshold]
-        features_below_threshold = correlation_df[correlation_df["Score"] < threshold]
+        features_exceed_threshold = correlation_df[
+            correlation_df["Score"] >= threshold]
+        features_below_threshold = correlation_df[
+            correlation_df["Score"] < threshold]
 
         # Create the Plotly figure
         fig = go.Figure()
@@ -77,7 +79,7 @@ def project_findings_body():
         fig.update_layout(
             title="Correlation between SalesPrice and Features",
             xaxis_title="House Features",
-            yaxis_title="Combined Pearson and Spearman Correlation Coefficient",
+            yaxis_title="Combined Pearson & Spearman Correlation Coefficient",
             barmode="group",
             hovermode="x unified",
             legend=dict(x=1.05, y=1),
@@ -89,22 +91,23 @@ def project_findings_body():
         return fig
 
     # Input slider to adjust threshold.
-    select_threshold = st.slider(label="Select threshold",
-                            min_value=0.0,
-                            max_value=2.0,
-                            value=1.2,
-                            step=0.01)
+    select_threshold = st.slider(
+        label="Select threshold",
+        min_value=0.0,
+        max_value=2.0,
+        value=1.2,
+        step=0.01)
 
     # Call function.
-    st.plotly_chart(show_correlation(combined_correlation_df, select_threshold))
-
+    st.plotly_chart(show_correlation(
+        combined_correlation_df, select_threshold
+        ))
 
     # checkbox to see all correlation coefficient
     if st.checkbox(f"Tick to view the correlation coefficient "
                    f"of all features "):
         combined_correlation_df.drop(columns=['Study'], axis=1, inplace=True)
         st.write(combined_correlation_df)
-
 
     st.subheader(f"Conclusion")
     st.write(f"We can conclude that OverallQual is very "
