@@ -299,7 +299,9 @@ This page lists the null and alternative hypothesis (as per the hypothesis secti
 
 A conclusion section for each explains each relationship.
 
-### Page 5: Peformance (For technical users)
+Please note that for the visualisations presented in hypothesis 2 we have manually ordered the categorical variables.
+
+### Page 5: Technical users.
 
 This page provides technical users with 
 
