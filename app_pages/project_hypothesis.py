@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 
+
 def scatter_plot(df, x_axis):
     """
     Function to generate a scatter plot with regression line.
@@ -14,24 +15,43 @@ def scatter_plot(df, x_axis):
 
     # Scatter plot
     fig = px.scatter(
-        df, x=x_axis, y='SalePrice', title=f"Scatter Plot of SalePrice and {x_axis}")
+        df, x=x_axis,
+        y='SalePrice',
+        title=f"Scatter Plot of SalePrice and {x_axis}")
 
     # Regression line.
     fig.add_scatter(
-        x=df[x_axis], 
-        y=df["Regression"], 
-        mode='lines', 
+        x=df[x_axis],
+        y=df["Regression"],
+        mode='lines',
         line=dict(color='red'),
-        showlegend=False 
+        showlegend=False
     )
 
     return fig
+
+
+def box_plot(df, x_axis, x_order):
+    """
+    Function to render a box plot.
+    """
+    # Create the box plot
+    fig = px.box(
+        df,
+        x=x_axis,
+        y='SalePrice',
+        title=f"Box Plot of 'SalePrice' and {x_axis}",
+        category_orders={x_axis: x_order}
+    )
+
+    return fig
+
 
 def project_hypothesis_body():
     # Function to render page.
     # Conclusions based off studies in PriceCorrelationStudy
 
-    #Load data set
+    # Load data set
     house_prices_clean_df = (
         pd.read_csv(
          "outputs/datasets/clean_data/House_prices_records_clean.csv"
@@ -57,7 +77,6 @@ def project_hypothesis_body():
                    ):
 
         st.plotly_chart(scatter_plot(house_prices_clean_df, 'GarageArea'))
-
 
     if st.checkbox(f"click here to see the relationship between"
                    f"SalePrice and GrLivArea"
@@ -94,12 +113,24 @@ def project_hypothesis_body():
     if st.checkbox(f"click here to see the relationship between"
                    f"SalePrice and KitchenQual"
                    ):
-        st.image("docs/plots/box-plot_of_saleprice_and_KitchenQual.png")
+
+        # Note that we need to manually order the categories as we are not
+        # able to apply an ordinal encoder.
+        kitchen_quality_categories = ['Fa', 'TA', 'Gd', 'Ex']
+        st.plotly_chart(box_plot(
+            house_prices_clean_df, 'KitchenQual', kitchen_quality_categories
+            ))
 
     if st.checkbox(f"click here to see the relationship between"
                    f"SalePrice and OverallQual"
                    ):
-        st.image("docs/plots/box-plot_of_saleprice_and_OverallQual.png")
+        # Note that we need to manually order the categories as we are not
+        # able to apply an ordinal encoder.
+        overall_quality_categories = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        st.plotly_chart(box_plot(
+            house_prices_clean_df, 'OverallQual', overall_quality_categories
+            ))
+
     st.write(f"**Conclusion**")
     st.write(f"There is a positive relationship between SalePrice and "
              f"'KitchenQual' and 'OverallQual'.")
