@@ -2,6 +2,6 @@ house_price_predictor_model.h5
 pipeline.pkl
 house_price_predictions.csv
 training_data
-clean_data
 collection
 jupyter_notebooks
+docs/plots
