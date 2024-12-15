@@ -12,6 +12,12 @@ def load_house_price_data():
         )
     return df
 
+def clean_house_price_data():
+    """Allows us to load house price data to dashboard"""
+    df = pd.read_csv(
+        "outputs/datasets/clean_data/House_prices_records_clean.csv"
+        )
+    return df
 
 def load_pkl_file(file_path):
     """Allows us to load pipeline & model to dashboard"""

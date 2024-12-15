@@ -1,9 +1,41 @@
 import streamlit as st
+import pandas as pd
+import plotly.express as px
+import numpy as np
 
+def scatter_plot(df, x_axis):
+    """
+    Function to generate a scatter plot with regression line.
+    """
+    x = df[x_axis]
+    y = df['SalePrice']
+    slope, intercept = np.polyfit(x, y, 1)
+    df["Regression"] = slope * x + intercept
+
+    # Scatter plot
+    fig = px.scatter(
+        df, x=x_axis, y='SalePrice', title=f"Scatter Plot of SalePrice and {x_axis}")
+
+    # Regression line.
+    fig.add_scatter(
+        x=df[x_axis], 
+        y=df["Regression"], 
+        mode='lines', 
+        line=dict(color='red'),
+        showlegend=False 
+    )
+
+    return fig
 
 def project_hypothesis_body():
     # Function to render page.
     # Conclusions based off studies in PriceCorrelationStudy
+
+    #Load data set
+    house_prices_clean_df = (
+        pd.read_csv(
+         "outputs/datasets/clean_data/House_prices_records_clean.csv"
+                ))
 
     st.header("**Project Hypothesis**")
     st.write(f"Prior to undertaking our study we formulated three "
@@ -21,21 +53,22 @@ def project_hypothesis_body():
 
     # Checkboxes supporting hypothesis 1.
     if st.checkbox(f"click here to see the relationship between"
-                   f"SalePrice and GarageArea"
+                   f" SalePrice and GarageArea"
                    ):
-        st.image(
-            "docs/plots/scatter_plot_of_saleprice_and_GarageArea.png"
-            )
+
+        st.plotly_chart(scatter_plot(house_prices_clean_df, 'GarageArea'))
+
 
     if st.checkbox(f"click here to see the relationship between"
                    f"SalePrice and GrLivArea"
                    ):
-        st.image("docs/plots/scatter_plot_of_saleprice_and_GrLivArea.png")
+        st.plotly_chart(scatter_plot(house_prices_clean_df, 'GrLivArea'))
 
     if st.checkbox(f"click here to see the relationship between"
                    f"SalePrice and TotalBsmtSF"
                    ):
-        st.image("docs/plots/scatter_plot_of_saleprice_and_TotalBsmtSF.png")
+        st.plotly_chart(scatter_plot(house_prices_clean_df, 'TotalBsmtSF'))
+
     st.write(f"**Conclusion**")
     st.write(f"There is a positive relationship between SalePrice and "
              f"'GarageArea', 'GrLivArea', 'TotalBsmtSF'.")
@@ -92,12 +125,13 @@ def project_hypothesis_body():
     if st.checkbox(f"click here to see the relationship between"
                    f"SalePrice and YearBuilt"
                    ):
-        st.image("docs/plots/scatter_plot_of_saleprice_and_YearBuilt.png")
+        st.plotly_chart(scatter_plot(house_prices_clean_df, 'YearBuilt'))
 
     if st.checkbox(f"click here to see the relationship between"
-                   f"SalePrice and YearRemodAd"
+                   f"SalePrice and YearRemodAdd"
                    ):
-        st.image("docs/plots/scatter_plot_of_saleprice_and_YearRemodAdd.png")
+        st.plotly_chart(scatter_plot(house_prices_clean_df, 'YearRemodAdd'))
+
     st.write(f"**Conclusion**")
     st.write(f"")
     st.write(
