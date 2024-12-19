@@ -205,11 +205,18 @@ These Hypotheses are tested in Jupyter notebook 05 - PriceCorrelationStudy. Spea
 ### Hypothesis 1
 There is a positive relationship between SalePrice and 'GarageArea', 'GrLivArea', 'TotalBsmtSF'. As these factors increase in size, so does the house price. The null hypothesis is disproven, the alternative hypothesis is true.
 
+<img src="docs/plots/scatter_plot_of_saleprice_and_GarageArea.png" alt="Scatter plot of SalePrice and GarageArea" style="width:30%; height:30%;"> <img src="docs/plots/scatter_plot_of_saleprice_and_GrLivArea.png" alt="Scatter plot of SalePrice and GrLivArea" style="width:30%; height:30%;"> <img src="docs/plots/scatter_plot_of_saleprice_and_TotalBsmtSF.png" alt="Scatter plot of SalePrice and TotalbsmtSF" style="width:30%; height:30%;">
+
 ### Hypothesis 2
 There is a positive relationship between SalePrice and 'KitchenQual' and 'OverallQual'. As quality ratings increase, so does the house price. The null hypothesis is disproven, the alternative hypothesis is true.
 
+<img src="docs/plots/box-plot_of_saleprice_and_KitchenQual.png" alt="Box plot of SalePrice and KitchenQual" style="width:45%; height:45%;"> <img src="docs/plots/box-plot_of_saleprice_and_OverallQual.png" alt="Box plot of SalePrice and OverallQual" style="width:45%; height:45%;">
+
 ### Hypothesis 3
 There is a positive relationship between SalePrice and 'YearBuilt', and 'YearRemodAdd'. Newer houses and those recently remodelled have higher prices than older houses. The null hypothesis is disproven, the alternative hypothesis is true.
+
+<img src="docs/plots/scatter_plot_of_saleprice_and_YearBuilt.png" alt="Scatter plot of SalePrice and YearBuilt" style="width:45%; height:45%;"> <img src="docs/plots/scatter_plot_of_saleprice_and_YearRemodAdd.png" alt="Scatter plot of SalePrice and YearRemodAdd" style="width:45%; height:45%;">
+
 
 ## Data understanding, preparation and modelling.
 The Data Understanding, Data Preparation and Modelling phases of the CRISP-DM paradigm were undertaken in Jupyter Notebooks.  
