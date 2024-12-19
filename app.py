@@ -11,7 +11,7 @@ from app_pages.project_technical_information import  \
 
 
 # Create an instance of the app
-app = MultiPage(app_name="House Price Predictions")
+app = MultiPage(app_name="Heritage Housing")
 
 # Add your app pages here using .add_page()
 app.add_page("Project Summary", page_summary_body)
