@@ -420,7 +420,13 @@ The below pages have been tested with the Code Institute [PEP8 linter](https://p
 | app_pages/project_findings.py | ✓ |
 | app_pages/project_hypothesis.py | ✓ |
 | app_pages/project_summary.py | ✓ |
-| app_pages/project_technical_information.py | ✓ |
+| 01 - DataCollection.ipynb | ✓ |
+| 02 - DataInspection.ipynb | ✓ |
+| 03 - DataCleaning.ipynb | ✓ |
+| 04 - FeatureEngineering.ipynb | ✓ |
+| 05 - PriceCorrelationStudy.ipynb | ✓ |
+| 06 - ModellingAndEvaluation.ipynb | ✓ |
+| 07 - ModellingMostImportantFeatures.ipynb | ✓ |
 
 ## Unfixed Bugs
 There is a dependency issue in the packages in the Code Institute template. The below error message appears when they are installed.  
@@ -495,7 +501,7 @@ The below libraries were used in the project. The versions used are in brackets 
 
 * matplotlib (3.3.1). To provide data visualisations, including a visualisation of the features which strongly correlate with SalePrice in the streamlit dashboard. Matplotlib offers more customisation than seaborn.
 
-* seaborn (0.11.0). To provide data visualisations, including visualisations showing hypotheses in the streamlit dashboard. Seaborn offers analysts powerful and effective visualisations where no customisation is needed
+* seaborn (0.11.0). To provide data visualisations, including visualisations showing hypotheses in the Jupyter Notebooks. Seaborn offers analysts powerful and effective visualisations where no customisation is needed
 
 * streamlit (0.85.0). Was used to create the dashboard.
 
@@ -505,7 +511,7 @@ The below libraries were used in the project. The versions used are in brackets 
 
 * tensorflow-cpu (2.6.0) and keras (2.6.0) were used to create a neural network model.
 
-* plotly (4.12.0) was used to create an interactive chart in the project findings page of the dashboard.
+* plotly (4.12.0) was used to create interactive charts on the dashboard.
 
 * protobuf (3.20) & altair (<5>). Are installed as part of the Code Institute template but not used.
 
