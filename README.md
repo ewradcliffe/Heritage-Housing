@@ -1,5 +1,39 @@
 # Heritage Housing.
 
+## Table of Contents
+- [Overview](#overview)
+- [Business objectives](#business-objectives)
+- [ML Business Case](#ml-business-case)
+  - [Business Requirement 1](#business-requirement-1)
+  - [Business Requirement 2](#business-requirement-2)
+- [Dataset Content](#dataset-content)
+- [Hypothesis and how to validate](#hypothesis-and-how-to-validate)
+  - [Hueristics](#hueristics)
+  - [Hypothesis 1](#hypothesis-1)
+  - [Hypothesis 2](#hypothesis-2)
+  - [Hypothesis 3](#hypothesis-3)
+  - [Conclusion](#conclusion)
+- [Data understanding, preparation and modelling](#data-understanding-preparation-and-modelling)
+  - [01 - Data Collection](#01---data-collection)
+  - [02 - Data Inspection](#02---data-inspection)
+  - [03 - Data Cleaning](#03---data-cleaning)
+  - [04 - Feature Engineering](#04---feature-engineering)
+  - [05 - Price Correlation Study](#05---price-correlation-study)
+  - [06 - Modelling and Evaluation](#06---modelling-and-evaluation)
+  - [07 - Modelling most important Features](#07---modelling-most-important-features)
+- [Deployment & Dashboard design](#deployment-&-dashboard-design)
+  - [Page 1: Quick project summary](#page-1-quick-project-summary)
+  - [Page 2: Findings](#page-2-findings)
+  - [Page 3: Display 4 houses' attributes and their respective predicted sale price](#page-3-display-4-houses-attributes-and-their-respective-predicted-sale-price)
+  - [Page 4: Hypothesis](#page-4-hypothesis)
+  - [Page 5: Technical Users](#page-5-technical-users)
+- [Testing](#testing)
+- [Validation](#validation)
+- [Unfixed Bugs](#unfixed-bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
+
 ## Overview
 
 The Heritage Housing project is a data analysis project designed to help a client maximise the sale price of homes they have inherited in Ames, Iowa. To achieve this, the client has provided a dataset that includes house sale prices and various features of the properties. Our goal is twofold: to identify the optimal sale price for these homes and to analyze how specific property features influence their market value. These objectives are further detailed in the Business Requirements section.
@@ -55,7 +89,9 @@ These epics were used to develop user stories added to a [kanban board](https://
 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
-**Business Requirement 1:** The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualisations of the correlated variables against the sale price.  
+
+### Business Requirement 1
+The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualisations of the correlated variables against the sale price.  
 
 *  We will inspect the data related to house prices  
 * We will perform Pearson and Spearman correlation studies to investigate how the variables are related to Sale Price.  
@@ -64,7 +100,8 @@ These epics were used to develop user stories added to a [kanban board](https://
 * We will display this on the dashboard.
 
 
-**Business Requirement 2:** The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.  
+### Business Requirement 2: 
+The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.  
 * We want to be able to predict the best sale price of the clients houses. We want to use an ML model based on regression analysis.
 * We can train, validate and test the model using the data provided. 
 * We can use this model to provide the client with estimations as to the best sale price for her houses, and display it on the dashboard.
@@ -535,7 +572,7 @@ The below libraries were used in the project. The versions used are in brackets 
 ### Media
 * Icon from https://smiley.cool/twitter-emoji.php
 
-## Acknowledgements (optional)
+## Acknowledgements
 
 [Hypothesis testing for data scientists](https://towardsdatascience.com/hypothesis-testing-for-data-scientists-everything-you-need-to-know-8c36ddde4cd2)  by Alicia Horsch
 What is CRISP DM? By Nick Hotz for Data Science Process Alliance.
