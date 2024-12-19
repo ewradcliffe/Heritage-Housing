@@ -307,9 +307,15 @@ Answers business requirement 1 by presenting the results of the Pearson and Spea
 
 1. Dataframe showing which features are strongly and very strongly correlated with SalePrice.
 
+<img src="docs/plots/spearman_pearson_correlation.png" alt="Combined Pearson and Spearmen correlations of most important features" style="width:45%; height:45%;">
+
 2. Data Visualisation: An interactive plotly chart shows the combined correlation of all features. Users can control the threshold at which features are selected with a slider input widget to group features together.
 
+<img src="docs/plots/spearman_pearson_visualisation.png" alt="Pearson and Spearmen visualisation" style="width:80%; height:80%;">
+
 3. Dataframe showing the correlation of all features with SalePrice. This is collapsible to save space.
+
+<img src="docs/plots/all_features.png" alt="Combined Pearson and Spearmen correlations of all features." style="width:45%; height:45%;">
 
 4. Conclusion section which interprets the data.
 
@@ -319,7 +325,11 @@ Answers business requirement 2.
 
 1. Displays a dataframe of the prices of the clients inherited houses as predicted by the model.
 
+<img src="docs/plots/inherited_house_predictions.png" alt="Predictions of client inherited houses" style="width:45%; height:45%;">
+
 2. Interactive widget allowing users to input live data to predict a house price using the same model. Considerable attention has been paid to making user experience as intuitive as possible:
+
+<img src="docs/plots/prediction_input_widget.png" alt="House price prediction input widget" style="width:50%; height:50%;">
 
 * Because the model can only make a prediction if all inputs are provided, the model was trained using only features which were strongly or very strongly correlated with SalePrice. The user only has to gather five features, not twenty one. 
 
@@ -340,6 +350,9 @@ This page lists the null and alternative hypothesis (as per the hypothesis secti
 * Hypothesis 2 - KitchenQual and OverallQual.
 
 * Hypothesis 3. YearBuilt and YearRemodAdd.
+
+An example of the visualiations validating the hypothesis.
+<img src="docs/plots/hypothesis_test_example.png" alt="An example of the visualiations validating the hypothesis" style="width:45%; height:45%;">
 
 A conclusion section for each explains each relationship.
 

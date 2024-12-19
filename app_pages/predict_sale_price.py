@@ -7,7 +7,7 @@ from src.machine_learning.data_management import load_house_price_data
 
 def predict_sale_price_body():
     # Function to render page.
-    st.header("**Predict Sale Price.**")
+    st.header("**Heritage Housing**")
     st.write(
         f"The client is interested in predicting the house sale prices from "
         f"her 4 inherited houses, and any other house in Ames, Iowa."
