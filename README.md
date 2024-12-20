@@ -44,7 +44,7 @@ The project findings are presented through an interactive Streamlit dashboard, h
 To ensure a structured and systematic approach, the project follows the CRoss Industry Standard Process for Data Mining (CRISP-DM). This six-phase methodology provides a comprehensive framework for navigating the data science life cycle, from understanding the business problem to delivering actionable insights.
 
 ## Business objectives:
-The CRISP-DM process starts with a thorough analysis of business objectives. For this project they were clearly defined in [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/). They are presented largely unaltered here.
+The CRISP-DM process starts with a thorough analysis of business objectives. For this project they were clearly defined in [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/) from the Code Institute. They are presented largely unaltered here.
 
 As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
@@ -284,7 +284,7 @@ The same pipeline and model architecture were applied. Experiments showed that r
 Finally, the clients Inherited house dataset was put through the pipeline and model to produce house price predictions which could be displayed on the dashboard.
 
 ## Deployment & Dashboard design
-The final phase of the CRISP-DM process is to deploy the project in such a way that we can present our findings to the client. Content was agreed with the client prior to the project and created with the streamlit app.
+The final phase of the CRISP-DM process is to deploy the project in such a way that we can present our findings to the client. Content was agreed with the client prior to the project and created with the streamlit app. Styling is minimal but visualisations are used extensively to support project findings and attention has been given to user experience (UX) and interactivity. Input widgets allow users to alter input parameters and plotly has been used to create interactive visualisations. The site is responsive to different screen sizes.
 
 ### Page 1: Quick project summary
 
@@ -582,6 +582,8 @@ The below libraries were used in the project. The versions used are in brackets 
 * The business case was taken from [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/) from The Code Institute
 
 * This ReadMe was based on [milestone-project-heritage-housing-issues](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues) from The Code Institute
+
+* Some code has been taken from the Code Institute [Data Analysis & Machine Learning Toolkit](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/d186ae95191f48e9a2151559c7e6f85d/771e4d181ce0413c87572c1baa903190/), and the corresponding walkthrough projects. I have used the corresponding templates in the creation of this project. 
 
 * Formula for calculating IQR from [How To Find Outliers in Data Using Python (and How To Handle Them)](https://careerfoundry.com/en/blog/data-analytics/how-to-find-outliers/#finding-outliers) by Eric Kleppen in Career Foundry.
 
