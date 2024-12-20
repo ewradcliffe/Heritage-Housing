@@ -1,4 +1,5 @@
 # Heritage Housing.
+<img src="docs/plots/cover_shot.png" alt="project cover shot">
 
 ## Table of Contents
 - [Overview](#overview)
@@ -576,6 +577,7 @@ The below libraries were used in the project. The versions used are in brackets 
 ## Credits
 
 ### Content
+* Project icon from [twitter emoji](https://smiley.cool/twitter-emoji.php)
 
 * The business case was taken from [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/) from The Code Institute
 

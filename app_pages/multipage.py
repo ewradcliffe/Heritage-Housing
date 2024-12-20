@@ -1,8 +1,7 @@
 import streamlit as st
 
+
 # Class to generate multiple Streamlit pages using an object oriented approach
-
-
 class MultiPage:
 
     def __init__(self, app_name) -> None:
@@ -12,7 +11,7 @@ class MultiPage:
         st.set_page_config(
             page_title=self.app_name,
             page_icon="📈")
-        # Icon from https://smiley.cool/twitter-emoji.php
+            # Icon from https://smiley.cool/twitter-emoji.php
 
     def add_page(self, title, func) -> None:
         self.pages.append({"title": title, "function": func})
